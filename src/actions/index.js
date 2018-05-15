@@ -12,3 +12,12 @@ export function getListData(){
         payload: response
     }
 }
+
+export function addToDoItem(item){
+    const response = axios.post(`${BASE_URL}/todos${API_KEY}`, item)
+
+    return {
+        type: types.ADD_ITEM,
+        payload: response
+    }
+}
