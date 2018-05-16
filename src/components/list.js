@@ -10,6 +10,10 @@ class List extends Component {
     render() {
         const { listData } = this.props;
 
+        if(!listData.length){
+            <h1 className="center">Loading...</h1>
+        }
+
         const listItems = listData.map((item, index) => {
             return (
                 <li className="collection-item" key={index}>
@@ -20,7 +24,7 @@ class List extends Component {
         return (
             <div>
                 <h1 className='center'>To Do List</h1>
-                <div className="rwo right-align">
+                <div className="row right-align">
                     <Link className="btn purple" to='/add-item'>Add Item</Link>
                 </div>
                 <ul className="collection">
